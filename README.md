@@ -1,11 +1,13 @@
-# Internet to PSTN Calling System (Live Voice Console)
+# Web-to-Cellular Calling & Speech Intelligence Workspace
+> Bridge web audio to real phone towers with participant controls and live STT.
 
-A web-based telephony application that bridges  internet VoIP and traditional PSTN networks. Built with **React** on the frontend and **FastAPI** on the backend, this system allows you to make phone calls directly from your browser—no SIM card required. 
-Powered by **LiveKit** for sub-second latency WebRTC & SIP routing, **Twilio** as the SIP provider for mobile numbers, and **Deepgram** for real-time transcription.
+A full-stack cloud telephony platform built with **React** on the frontend and **FastAPI** on the backend that allows you to dial real cellular phone numbers and landlines directly from your browser—no SIM card required. 
+
+Powered by **LiveKit** for sub-second latency WebRTC & SIP routing, **Twilio** for PSTN mobile/cellular termination, and **Deepgram** for real-time AI speech-to-text.
 
 ## ✨ Features
-* **Browser-to-PSTN Calling**: Dial real phone numbers globally straight from the web dashboard using a Twilio-provisioned mobile number.
-* **Real-time Transcription**: Live Speech-to-Text (STT) powered by Deepgram's Nova-2 model, featuring automatic speaker diarization.
+* **Web-to-Cellular Calling**: Dial real phone numbers globally straight from the web dashboard using a Twilio-provisioned mobile number without a SIM card.
+* **Real-time Speech Intelligence**: Live Speech-to-Text (STT) powered by Deepgram's Nova-2 model, featuring automatic speaker diarization.
 * **Audio Recording**: Capture and download high-quality WebM recordings of your active calls.
 * **Participant Management**: Mute, unmute, and hang up on participants seamlessly via the backend API.
 * **Modern UI**: A responsive, premium "Console" dashboard providing real-time call states, active speaker indicators, and dynamic call controls.
@@ -50,7 +52,7 @@ LIVEKIT_API_SECRET=your_api_secret
 # The LiveKit SIP Trunk ID that is connected to your Twilio number
 SIP_TRUNK_ID=your_sip_trunk_id
 
-follow the given guide to generate SIP Trunk ID : https://drive.google.com/file/d/1wXdQO4aQ-8XPfm5xKNUk84KQsAzwTfPO/view?usp=sharing
+follow the given guide to generate SIP Trunk ID : https://drive.google.com/file/d/1lO9HRuvdpB03v379Y42VOcWSu-RQIzAX/view?usp=sharing 
 ```
 
 Run the backend:
@@ -84,4 +86,3 @@ npm run dev
 3. Add a participant by entering their country code (e.g., `+91`) and 10-digit phone number.(with free twlio account we must verify that number to make calls)
 4. Click **Call** to establish the SIP connection over Twilio.
 5. Use **Start Transcript** to begin live Deepgram STT, and **Start Record** to capture local session audio.
-
